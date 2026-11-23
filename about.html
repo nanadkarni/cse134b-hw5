@@ -1,0 +1,116 @@
+<!DOCTYPE html> <!---what type of document is this-->
+<!--head and body-->
+<!--title is the only required tag in html-->
+
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>about_me</title>
+
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0" >
+        <link rel="icon" type="image/png" href="star.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="theme.js" defer></script>
+        <script src="cuteInteractive.js" defer></script>
+       </head>
+    <body>
+        <header>
+            <title-card>
+                <hgroup>
+                    <h2><a href="index.html">&#10035 Naoms' Portfolio &#10035</a></h2>
+                    <p>a little look into my mind</p>
+                </hgroup>
+			    <button commandfor="cutePopup" command="show-modal">
+                    <label for="cutePopup">mysterious<br>button</label>
+			    </button>
+                <button id="toggle-theme" type="button" hidden>Switch Theme</button>
+            </title-card>
+            <hr>
+            <nav>
+                <a href="about.html" id="about">About</a>
+                <a href="themed_ent.html">Themed Entertainment</a>
+                <a href="experiments.html">Experiments</a>
+                <a href="form-no-js.html">Form Without Javascript</a>
+                <a href="form-with-js.html">Form WITH Javascript</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Hi, I'm Naomika, it's nice to meet you</h2>
+            <h1>I'm a designer with a passion for creating experiences!</h1>
+            <section>
+                <p>Originally from Singapore, I'm currently a fourth-year at UC San Diego, pursuing a 
+                    <strong>B.S. in Cognitive Science with a specialization in Design and Interaction</strong>, with 
+                    minors in Computer Science and Theatre. <br>I have loved both <em>theme parks</em> 
+                    and <em>design</em> from a young age, and am eager to expand my horizons professionally in 
+                    these spaces! I thrive in interdisciplinary environments and love creative 
+                    collaboration to realise incredible ideas!</p>
+            </section>
+            <section>
+                <h2>My Top 5 Favourite Rollercoasters!</h2>
+                <ol>
+                    <li>Flying Dinosaur - Universal Studios Japan</li>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4304.418937834415!2d135.42861435775066!3d34.66391067165335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e9b013e1243b%3A0x9a75d3986b33f9e4!2sThe%20Flying%20Dinosaur!5e0!3m2!1sen!2sus!4v1791765414459!5m2!1sen!2sus" width="300" height="200" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <li>Hakugei - Nagashima Spa Land</li>
+                    <li>Velocicoaster - Universal's Islands of Adventure</li>
+                    <li>Wildcat's Revenge - Hersheypark</li>
+                    <li>Ghostrider - Knott's Berry Farm</li>
+                </ol>
+            </section>
+
+            <cute-interactive>
+                    <button type="button" id="show-message">Show message</button>
+                    <div id="messages"></div>
+            </cute-interactive>
+        </main>
+    <hello-world></hello-world>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello World!");
+            }
+        }
+
+        customElements.define("hello-world", HelloWorld);
+    </script>
+    
+        <dialog id="cutePopup">
+		<header>
+			<button commandfor="cutePopup" command="close" aria-label="Close">&times;</button>
+		</header>
+		<section>
+            <h2>Hey</h2>
+            <form id="musical-form" method="POST">
+                <fieldset>
+                    <legend>Quick Question</legend>
+                        <label for="musical">Favourite Musical:</label>
+                            <select name="Favorite Musical" id="musical">
+                                <optgroup label ="mainstream">
+                                    <option value="deh">Dear Evan Hansen</option>
+                                    <option value="ham">Hamilton</option>
+                                    <option value="hades">Hadestown</option>
+                                </optgroup>
+                                <optgroup label ="obscure">
+                                    <option value="falsettos"><i>Falsettos</i></option>
+                                    <option value="ordinary"><i>Ordinary Days</i></option>
+                                    <option value="ntn">Next to Normal</option>
+                                </optgroup>
+                            </select>
+                            <br>
+                        <label for="musical2">Another Favourite Musical:</label>
+                            <input type="text" id="musical2" name="musical2" list="musicals" placeholder="Type.">
+                </fieldset>
+            </form>
+            <h3>here are some of mine!</h3>
+            <ul>
+                <li>Falsettos</li>
+                <li>Carrie</li>
+                <li>Heathers</li>
+                <li>Mean Girls</li>
+            </ul>
+		</section>
+		<footer>
+			<button commandfor="cutePopup" command="close" class="primary">Done</button>
+		</footer>
+	</dialog>
+    </body>

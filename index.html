@@ -1,0 +1,101 @@
+<!DOCTYPE html> <!---what type of document is this-->
+<!--head and body-->
+<!--title is the only required tag in html-->
+
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>homepage</title>
+
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="star.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="theme.js" defer></script>
+       </head>
+    <body>
+        <header>
+            <title-card>
+                <hgroup>
+                    <h2><a href="index.html">&#10035 Naoms' Portfolio &#10035</a></h2>
+                    <p>a little look into my mind</p>
+                </hgroup>
+			    <button commandfor="cutePopup" command="show-modal">
+                    <label for="cutePopup">mysterious<br>button</label>
+			    </button>
+                <button id="toggle-theme" type="button" hidden>Switch Theme</button>
+            </title-card>
+            <hr>
+            <nav>
+                <a href="about.html" id="about">About</a>
+                <a href="themed_ent.html">Themed Entertainment</a>
+                <a href="experiments.html">Experiments</a>
+                <a href="form-no-js.html">Form Without Javascript</a>
+                <a href="form-with-js.html">Form WITH Javascript</a>
+            </nav>
+        </header>
+        <main>
+        <section>
+            <h1>Naomika Nadkarni</h1>
+            <h2>I love making experiences that delight people!</h2>
+            <picture>
+                <source media="(min-width:650px)" srcset="velocicoaster.jpg">
+                <img src="wildcat.jpg" alt="Coaster" style="width:auto;">
+            </picture>
+            <h3>Themed Entertainment, UX Design, and so much more!</h3>
+        </section>
+
+        <hr>
+        <div>
+            <h2>Featured Projects</h2>
+        </div>
+        </main>
+        <footer>
+            <p>made with love, by Naomika</p>
+            <p>Want to chat? <a href="mailto:naomika.nadkarni@gmail.com">Email Me!</a> </p>
+            <form>
+                <label for="headcolor">What is your <b>fave colour?</b></label>
+                <input type="color" id="headcolor" name="headcolor" value="#ff0000">
+            </form>
+        </footer>
+        
+    <dialog id="cutePopup">
+		<header>
+			<button commandfor="cutePopup" command="close" aria-label="Close">&times;</button>
+		</header>
+		<section>
+            <h2>Hey</h2>
+            <form id="musical-form" method="POST">
+                <fieldset>
+                    <legend>Quick Question</legend>
+                        <label for="musical">Favourite Musical:</label>
+                            <select name="Favorite Musical" id="musical">
+                                <optgroup label ="mainstream">
+                                    <option value="deh">Dear Evan Hansen</option>
+                                    <option value="ham">Hamilton</option>
+                                    <option value="hades">Hadestown</option>
+                                </optgroup>
+                                <optgroup label ="obscure">
+                                    <option value="falsettos"><i>Falsettos</i></option>
+                                    <option value="ordinary"><i>Ordinary Days</i></option>
+                                    <option value="ntn">Next to Normal</option>
+                                </optgroup>
+                            </select>
+                            <br>
+                        <label for="musical2">Another Favourite Musical:</label>
+                            <input type="text" id="musical2" name="musical2" list="musicals" placeholder="Type.">
+                </fieldset>
+            </form>
+            <h3>here are some of mine!</h3>
+            <ul>
+                <li>Falsettos</li>
+                <li>Carrie</li>
+                <li>Heathers</li>
+                <li>Mean Girls</li>
+            </ul>
+		</section>
+		<footer>
+			<button commandfor="cutePopup" command="close" class="primary">Done</button>
+		</footer>
+	</dialog>
+    </body>
+</html>
