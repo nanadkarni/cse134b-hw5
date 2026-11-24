@@ -4,7 +4,7 @@
         const messages = document.querySelector("#messages");
         button.addEventListener("click", () => {
         const message = document.createElement("p");
-        message.textContent = "You activated the button.";
+        message.textContent = "Congratulations! You found the secret button";
         messages.appendChild(message);
     });
     }
