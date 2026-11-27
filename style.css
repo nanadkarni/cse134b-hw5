@@ -188,7 +188,7 @@ output{
 
 cute-interactive button {
   background-color: var(--palepink); 
-  color: var(off-black);
+  color: var(--off-black);
   border: 2px solid var(--offblack);
 }
 
