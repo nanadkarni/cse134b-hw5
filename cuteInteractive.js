@@ -15,7 +15,6 @@
       this.statusZone = document.querySelector('#status-zone');
 
       button.addEventListener("click", async () => {
-          this.statusZone.textContent("Hold tight, mind bending information incoming!");
           const fact = await loadFact();
           const message = document.createElement("p");
           message.textContent = "Congratulations! You found the secret button!";
