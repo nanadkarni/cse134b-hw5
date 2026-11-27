@@ -187,9 +187,11 @@ output{
 }
 
 cute-interactive button {
-  background-color: var(--palepink); 
-  color: black;
-  border: 2px solid var(--offblack);
+	display: grid;
+	padding: 10px;
+	background-color: var(--palepink); 
+	color: var(--offblack);
+	border: 2px dotted var(--darkpeach);
 }
 
 

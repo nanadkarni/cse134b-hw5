@@ -2,10 +2,10 @@
      async connectedCallback() {
         const button = document.querySelector("#show-message");
         const messages = document.querySelector("#messages");
-          this.fact = await loadFact();
+        this.fact = await loadFact();
         button.addEventListener("click", () => {
           const message = document.createElement("p");
-          message.textContent = `Congratulations! You found the secret button!\nHere is the Fact of the Day: ${this.fact}`;
+          message.textContent = `Congratulations! You found the secret button!\n HEY DID YOU KNOW: ${this.fact}`;
           messages.appendChild(message);
       }
     );
