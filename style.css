@@ -186,7 +186,7 @@ output{
 	font-style:italic;
 }
 
-cute-interactive button {
+button #show-message {
 	padding: 10px;
 	background-color: var(--palepink); 
 	color: var(--offblack);
