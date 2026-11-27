@@ -9,7 +9,6 @@
           const factoid = document.createElement("p");
           factoid.textContent = `HEY DID YOU KNOW: ${this.fact}`;
           messages.appendChild(message);
-          messages.appendChild('br');
           messages.appendChild(factoid);
       }
     );
