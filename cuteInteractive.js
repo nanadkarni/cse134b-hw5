@@ -5,8 +5,11 @@
         this.fact = await loadFact();
         button.addEventListener("click", () => {
           const message = document.createElement("p");
-          message.textContent = `Congratulations! You found the secret button!\n HEY DID YOU KNOW: ${this.fact}`;
+          message.textContent = "Congratulations! You found the secret button!";
+          const factoid = document.createElement("p");
+          factoid.textContent = `HEY DID YOU KNOW: ${this.fact}`;
           messages.appendChild(message);
+          messages.appendChild(factoid);
       }
     );
     }
