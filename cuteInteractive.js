@@ -64,14 +64,10 @@
     const colourChange = document.querySelector("#teeny-secret");
     const cute = document.querySelector('cute-interactive');
     colourChange.addEventListener("click", () => {
-      if (cute.hasAttribute("colour")){
-        cute.removeAttribute("colour");
-      }
-      else{
         const curr = cute.i % (cute.colours.length);
         cute.setAttribute("colour", cute.colours[curr]);
         cute.i++;
-      }
+      
     });
   }
 
