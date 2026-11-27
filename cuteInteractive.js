@@ -5,6 +5,7 @@
      async connectedCallback() {
         const button = document.querySelector("#show-message");
         const messages = document.querySelector("#messages");
+        const colourChange = document.querySelector("#teeny-secret");
         this.fact = await loadFact();
         button.addEventListener("click", () => {
           const message = document.createElement("p");
@@ -13,6 +14,15 @@
           factoid.textContent = `HEY DID YOU KNOW: ${this.fact}`;
           messages.appendChild(message);
           messages.appendChild(factoid);
+      });
+        const colours = ["#F58F7D", "#EB7400", "#FFE42E", "#1F8A00", "#52FFF8", "#2736B2", "#411157"];
+        let i = 0;
+        colourChange.addEventListener("click", () => {
+          messages.style.color = colours[i];
+          i++;
+        if ( i >= colours.length){
+          i = 0;
+        }
       }
     );
     }

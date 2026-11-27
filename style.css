@@ -186,11 +186,23 @@ output{
 	font-style:italic;
 }
 
-button #show-message {
+#show-message {
 	padding: 10px;
 	background-color: var(--palepink); 
 	color: var(--offblack);
 	border: 2px dotted var(--darkpeach);
+}
+#show-message:hover {
+	background-color: var(--darkpeach);
+	color: var(--offwhite);
+}
+
+
+#teeny-secret{
+	font-size: 0.4em;
+	background-color: var(--offwhite);
+	color: var(--offblack);
+	padding: 0.5em;
 }
 
 
