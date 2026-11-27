@@ -62,11 +62,30 @@
   function colourChangeButton(){
     const colourChange = document.querySelector("#teeny-secret");
     const cute = document.querySelector('cute-interactive');
+
+    try {
+      let currColour = localStorage.getItem("colour");
+      if (currColour == null || !cute.colours.includes(currColour)){
+        currColour = cute.colours[cute.i];
+      }
+      else{
+        cute.setAttribute("colour", currColour);
+        cute.i = cute.colours.indexOf(currColour) + 1;
+      }
+     } catch(error) {
+      console.warn("The colour could not be read");
+    }
+
     colourChange.addEventListener("click", () => {
         const curr = cute.i % (cute.colours.length);
-        cute.setAttribute("colour", cute.colours[curr]);
+        cute.setAttribute("colour", cute.colours[curr]);themeToggle;
+        try{
+          localStorage.setItem("colour", cute.colours[curr]);
+        }
+        catch(error){
+          console.warm("the colour could not be saved");
+        }
         cute.i++;
-      
     });
   }
 
