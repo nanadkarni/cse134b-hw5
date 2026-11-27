@@ -13,7 +13,7 @@
   }
 
     async function loadFact() {
-    const url = "https://uselessfacts.jsph.pl/";
+    const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
     // Run these steps in order. If one throws an error, jump to catch.
     try {
         const response = await fetch(url);
