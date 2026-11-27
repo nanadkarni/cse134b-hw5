@@ -1,4 +1,7 @@
   class CuteInteractive extends HTMLElement {
+    constructor() {
+      super();
+    }
      async connectedCallback() {
         const button = document.querySelector("#show-message");
         const messages = document.querySelector("#messages");
