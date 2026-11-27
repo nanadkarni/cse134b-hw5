@@ -78,7 +78,7 @@
 
     colourChange.addEventListener("click", () => {
         const curr = cute.i % (cute.colours.length);
-        cute.setAttribute("colour", cute.colours[curr]);themeToggle;
+        cute.setAttribute("colour", cute.colours[curr]);
         try{
           localStorage.setItem("colour", cute.colours[curr]);
         }
