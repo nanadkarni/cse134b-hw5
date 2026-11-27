@@ -203,6 +203,7 @@ output{
 	background-color: var(--offwhite);
 	color: var(--offblack);
 	padding: 0.5em;
+	font-family:var(--font-family);
 }
 
 
