@@ -5,13 +5,13 @@
 
     constructor() {
       super();
-      const colours = ["#f57f7d", "#EB7400", "#FFE42E", "#1F8A00", "#52FFF8", "#2736B2", "#411157"];
-      let i = 0;  
+      this.colours = ["#f57f7d", "#EB7400", "#FFE42E", "#1F8A00", "#52FFF8", "#2736B2", "#411157"];
+      this.i = 0;  
     }
 
     async connectedCallback() {
       const button = document.querySelector("#show-message");
-      const messages = document.querySelector("#messages");
+      this.messages = document.querySelector("#messages");
       const colourChange = document.querySelector("#teeny-secret");
       this.fact = await loadFact();
       let clicked = false;
@@ -21,22 +21,23 @@
           message.textContent = "Congratulations! You found the secret button!";
           const factoid = document.createElement("p");
           factoid.textContent = `HEY DID YOU KNOW: ${this.fact}`;
-          messages.appendChild(message);
-          messages.appendChild(factoid);
+          this.messages.appendChild(message);
+          this.messages.appendChild(factoid);
           clicked = true;
         }
       });
       colourChange.addEventListener("click", () => {
-        let curr = i%(colours.length);
-        this.setAttribute("colour", this.colours[this.curr]);
+        const curr = this.i % (this.colours.length);
+        this.setAttribute("colour", this.colours[curr]);
         this.i++;
       });
     }
     attributeChangedCallback(name, oldValue, newValue){
-      if (name ===colour){
-        if (newValue!=null){
-          this.messages.style.color = newValue;
-        }
+      if (name ==="colour"&& newValue!== null && this.messages){
+        this.messages.style.color = newValue;
+         console.log(
+          `Attribute ${name} has changed from ${oldValue} to ${newValue}.`,
+        );
       }
     }
   }
