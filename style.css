@@ -9,7 +9,10 @@
 [data-theme="spooky"] body {
 	background-color: var(--offblack);
 	color: var(--offwhite);
+	--cute-interactive-background: var(--peach);
+	--cute-interative-text:var(--offwhite);
 }
+
 [data-theme="spooky"] h1, [data-theme="spooky"] h2, [data-theme="spooky"] h3{
 	color: var(--offwhite);
 }
@@ -32,6 +35,8 @@ body{
 	margin: 0 auto;
 	margin-bottom: 1rem;
 	line-height: normal;
+	--cute-interactive-background: var(--palepink);
+	--cute-interative-text: var(--offblack);
 }
 
 h1 {
@@ -188,8 +193,8 @@ output{
 
 #show-message {
 	padding: 10px;
-	background-color: var(--palepink); 
-	color: var(--offblack);
+	background-color: var(--cute-interactive-background, white); 
+	color: var(--cute-interative-text,black);
 	border: 2px dotted var(--darkpeach);
 }
 #show-message:hover {
