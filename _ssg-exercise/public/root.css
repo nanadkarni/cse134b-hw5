@@ -1,0 +1,24 @@
+/* Root File w/ globals */
+
+@font-face {
+	font-family: "Slackey";
+	src: url("./Slackey-Regular.ttf");
+}
+
+:root {
+    /* Colours */
+  --maroon: #70103a;
+  --offwhite: #F1EFEA;
+  --offblack: #223843;
+  --peach: #D77A61;
+  --darkpeach:#ba6047;
+  --blueish: #4A7B9D;
+  --paleteal: #bff9ff;
+  --palepink: #ffe8e5;
+ 
+  /* Fonts */
+  --font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --heading-font: "Slackey", "Montserrat", serif;
+  --subheading-font: "Montserrat", sans-serif;
+
+}

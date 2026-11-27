@@ -1,0 +1,41 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+---
+
+<!DOCTYPE html> <!---what type of document is this-->
+<!--head and body-->
+<!--title is the only required tag in html-->
+
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>homepage</title>
+
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="star.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="theme.js" defer></script>
+       </head>
+    <body>
+        <Header />
+        <main>
+        <section>
+            <h1>Naomika Nadkarni</h1>
+            <h2>I love making experiences that delight people!</h2>
+            <picture>
+                <source media="(min-width:650px)" srcset="src/assets/velocicoaster.jpg" alt = "Jurassic World Velocicoaster, at Universal's Islands of Adventure, Naomika's 3rd Favourite Coaster">
+                <img src="src/assets/wildcat.jpg" alt="Wildcat's Revenge, at Hersheypark, Pennyslvania." style="width:auto;">
+            </picture>
+            <h3>Themed Entertainment, UX Design, and so much more!</h3>
+        </section>
+
+        <hr>
+        <div>
+            <h2>Featured Projects</h2>
+        </div>
+        </main>
+      	<Footer />  
+    </body>
+</html>
