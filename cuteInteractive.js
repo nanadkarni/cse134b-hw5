@@ -12,13 +12,6 @@
     async connectedCallback() {
       const button = document.querySelector("#show-message");
       this.messages = document.querySelector("#messages");
-      const colourChange = document.querySelector("#teeny-secret");
-
-      colourChange.addEventListener("click", () => {
-        const curr = this.i % (this.colours.length);
-        this.setAttribute("colour", this.colours[curr]);
-        this.i++;
-      });
 
       let clicked = false;
       button.addEventListener("click", async () => {
@@ -27,7 +20,7 @@
           const message = document.createElement("p");
           message.textContent = "Congratulations! You found the secret button!";
           const factoid = document.createElement("p");
-          factoid.textContent = `HEY DID YOU KNOW: ${this.fact}`;
+          factoid.textContent = `HEY DID YOU KNOW: ${fact}`;
           this.messages.appendChild(message);
           this.messages.appendChild(factoid);
           clicked = true;
@@ -36,17 +29,13 @@
     }
   
 
-    attributeChangedCallback(name, oldValue, newValue){
-      if (name ==="colour"&& newValue!== null && this.messages){
+    attributeChangedCallback(attrName, oldValue, newValue){
+      if (attrName ==="colour"&& newValue!== null && this.messages){
         this.messages.style.color = newValue;
-         console.log(
-          `Attribute ${name} has changed from ${oldValue} to ${newValue}.`,
-        );
+         console.log(`Attribute ${attrName} has changed from ${oldValue} to ${newValue}.`);
       }
     }
   }
-  
-  
 
     async function loadFact() {
     const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
@@ -74,3 +63,16 @@
   }
 
   customElements.define('cute-interactive', CuteInteractive);
+
+  const colourChange = document.querySelector("#teeny-secret");
+  const cute = document.querySelector('cute-interactive');
+  colourChange.addEventListener("click", () => {
+    if (cute.hasAttribute("colour")){
+      cute.removeAttribute("colour");
+    }
+    else{
+    const curr = cute.i % (cute.colours.length);
+    cute.setAttribute("colour", cute.colours[curr]);
+    cute.i++;
+    }
+  });
