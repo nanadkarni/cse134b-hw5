@@ -5,7 +5,7 @@ function themeToggle() {
     if (document.documentElement.dataset["theme"] === "light") {
         document.documentElement.dataset["theme"] = "spooky";
         try {
-            localStorage.setItem("theme", 'spooky');
+            localStorage.setItem('theme', 'spooky');
         } catch (error) {
             console.warn("The theme preference could not be saved.");
         }
@@ -13,7 +13,7 @@ function themeToggle() {
     }
     document.documentElement.dataset["theme"] = "light";
     try {
-        localStorage.setItem("theme", 'light');
+        localStorage.setItem('theme', 'light');
     } catch (error) {
         console.warn("The theme preference could not be saved.");
     }
@@ -39,6 +39,10 @@ function amazingTransition() {
       changePage();
     });
   }
+}
+
+function changePage(){
+  window.location.href = aboutPage.href;
 }
 
 showToggle();
