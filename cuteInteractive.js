@@ -68,7 +68,7 @@
 
     try {
       const currSaved = localStorage.getItem(key);
-      if (currColour !== null || cute.colours.includes(currColour)){
+      if (currColour !== null && cute.colours.includes(currColour)){
         currColour = currSaved;
       }
     } catch(error){
