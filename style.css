@@ -203,7 +203,7 @@ output{
 }
 
 
-#teeny-secret{
+#teeny-secret, #keep-colour{
 	font-size: 0.4em;
 	background-color: var(--offwhite);
 	color: var(--offblack);

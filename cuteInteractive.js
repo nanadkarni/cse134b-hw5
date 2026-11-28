@@ -5,7 +5,7 @@
 
     constructor() {
       super();
-      this.colours = ["#f57f7d", "#EB7400", "#FFE42E", "#1F8A00", "#52FFF8", "#2736B2", "#411157"];
+      this.colours = ["#e66664", "#EB7400", "#FFE42E", "#1F8A00", "#52FFF8", "#2736B2", "#411157"];
       this.i = 0;  
     }
 
@@ -13,6 +13,10 @@
       const button = document.querySelector("#show-message");
       this.messages = document.querySelector("#messages");
       this.statusZone = document.querySelector('#status-zone');
+
+    if (this.hasAttribute("colour")) {
+      this.messages.style.color = this.getAttribute("colour");
+    }
 
       button.addEventListener("click", async () => {
           const fact = await loadFact();
@@ -38,7 +42,6 @@
     const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
     try {
         const response = await fetch(url);
-      // Even an HTTP error such as 404 returns a response. Check its status.
         if (!response.ok) {
           throw new Error(`HTTP status ${response.status}`);
         }
@@ -46,7 +49,6 @@
       if (typeof data?.text !== "string") {
         throw new Error("Expected a message in the response.");
       }
-      // The response passed both checks. Show the message in the Console.
       console.log(data.text);
       const fact = data.text;
       return fact;
@@ -63,12 +65,13 @@
     const colourChange = document.querySelector("#teeny-secret");
     const cute = document.querySelector('cute-interactive');
     const key = "cute-interactive-colour"
+    const colourButton = document.querySelector("#keep-colour");
 
     let currColour = cute.colours[0];
 
     try {
       const currSaved = localStorage.getItem(key);
-      if (currColour !== null && cute.colours.includes(currColour)){
+      if (currSaved !== null && cute.colours.includes(currColour)){
         currColour = currSaved;
       }
     } catch(error){
@@ -87,8 +90,21 @@
           console.warn("the colour could not be saved");
         }
         cute.i++;
+        colourButton.removeAttribute('hidden');
     });
-  }
+    colourButton.addEventListener("click", ()=>{
+      const savedTextColour = cute.getAttribute("colour");
+      if (cute.colours.includes(savedTextColour)) {
+      try {
+        localStorage.setItem(key, savedTextColour);
+      } catch (error) {
+        console.warn("The colour could not be saved");
+      }
+      colourButton.textContent = "this colour was saved";
+    }
+  });
+}
+
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", colourChangeButton);
