@@ -62,28 +62,29 @@
   function colourChangeButton(){
     const colourChange = document.querySelector("#teeny-secret");
     const cute = document.querySelector('cute-interactive');
+    const key = "cute-interactive-colour"
+
+    let currColour = cute.colours[0];
 
     try {
-      let currColour = localStorage.getItem("colour");
-      if (currColour == null || !cute.colours.includes(currColour)){
-        currColour = cute.colours[cute.i];
+      const currSaved = localStorage.getItem(key);
+      if (currColour !== null || cute.colours.includes(currColour)){
+        currColour = currSaved;
       }
-      else{
-        cute.setAttribute("colour", currColour);
-        cute.i = cute.colours.indexOf(currColour) + 1;
-      }
-     } catch(error) {
-      console.warn("The colour could not be read");
+    } catch(error){
+        console.warn("The colour could not be read");
     }
+      cute.setAttribute("colour", currColour);
+      cute.i = (cute.colours.indexOf(currColour) + 1)%cute.colours.length;
 
     colourChange.addEventListener("click", () => {
         const curr = cute.i % (cute.colours.length);
         cute.setAttribute("colour", cute.colours[curr]);
         try{
-          localStorage.setItem("colour", cute.colours[curr]);
+          localStorage.setItem(key, cute.colours[curr]);
         }
         catch(error){
-          console.warm("the colour could not be saved");
+          console.warn("the colour could not be saved");
         }
         cute.i++;
     });
